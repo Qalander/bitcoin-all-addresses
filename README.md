@@ -1,6 +1,12 @@
 # bitcoin-all-addresses
 uniq addresses from blockchair output dumps
 
+files:
+
+blockchair_bitcoin_outputs_20090103.tsv.gz to blockchair_bitcoin_outputs_20200719.tsv.gz
+
+total number of unique addresses: ?
+
 method:
 
 download all output dump files from blockchair;
