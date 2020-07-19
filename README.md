@@ -27,4 +27,6 @@ https://gz.blockchair.com/bitcoin/
 
 http://addresses.loyce.club/?C=M;O=D
 
+http://loyceipv6.tk:20319/blockdata
+
 https://bitcointalk.org/index.php?topic=5259621.0
