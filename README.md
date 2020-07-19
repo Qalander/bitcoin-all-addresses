@@ -21,7 +21,7 @@ general methodology:
 
 3.use perl and print addresses the first time they are seen `perl -ne 'print unless $seen{$_}++' $( printf '%s\n' *.addr.txt | sort -t_ -k4 -n )`;
 
-4.split resulting in files of about 180MB `split -C 180000000 [SINGLEFILE.txt]`;
+4.split resulting file at about 180MB `split -C 180000000 [SINGLEFILE.txt]`;
 
 5.make 7z files and hope they are below 100MB each to upload to github.
 
