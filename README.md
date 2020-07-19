@@ -1,23 +1,29 @@
 # bitcoin-all-addresses
 lists of unique addresses from blockchair output dumps
 
+thank you, blockchair team!
+
 files (4210 files):
 
 blockchair_bitcoin_outputs_20090103.tsv.gz to blockchair_bitcoin_outputs_20200718.tsv.gz
 
 total number of unique addresses: ?
 
-method:
+methods:
 
-download all output dump files from blockchair;
+1.download all output dump files from blockchair;
 
-uncompress files and cut the 7th field (recipient);
+1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
-use perl and print addresses unless seen;
+1.2.also test .gz files with `gunzip -t [FILE]`;
 
-split in files of about 180MB;
+2.uncompress files and cut the 7th field (recipient);
 
-7z files and hope they are below 100MB each to upload to github.
+3.use perl and print addresses with unless_seen;
+
+4.split in files of about 180MB;
+
+5.make 7z files and hope they are below 100MB each to upload to github.
 
 references:
 
