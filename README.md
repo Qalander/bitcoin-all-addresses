@@ -9,19 +9,19 @@ blockchair_bitcoin_outputs_20090103.tsv.gz to blockchair_bitcoin_outputs_2020071
 
 total number of unique addresses: ?
 
-methods:
+general methodology:
 
 1.download all output dump files from blockchair;
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
-1.2.also test .gz files with `gunzip -t [FILE]`;
+1.2.also test .gz files `gunzip -t [*.gz]`;
 
-2.uncompress files and cut the 7th field (recipient);
+2.uncompress files and cut the 7th field (recipient) `gunzip -c [FILE] | cut -d$'\t' -f7`;
 
-3.use perl and print addresses with unless_seen;
+3.use perl and print addresses the first time they are seen `perl -ne 'print unless $seen{$_}++'`;
 
-4.split in files of about 180MB;
+4.split in files of about 180MB `split -C 180000000 [SINGLEFILE.txt]`;
 
 5.make 7z files and hope they are below 100MB each to upload to github.
 
