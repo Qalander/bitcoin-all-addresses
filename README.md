@@ -1,5 +1,5 @@
 # bitcoin-all-addresses
-uniq addresses from blockchair output dumps
+lists of unique addresses from blockchair output dumps
 
 files (4210 files):
 
