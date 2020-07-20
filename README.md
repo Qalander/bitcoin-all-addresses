@@ -1,4 +1,6 @@
 # bitcoin-all-addresses
+i will not spare the time. give up.
+
 lists of unique addresses from blockchair output dumps
 
 thank you, blockchair team!
