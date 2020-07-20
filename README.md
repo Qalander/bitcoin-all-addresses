@@ -3,7 +3,7 @@ lists of unique addresses from blockchair output dumps
 
 thank you, blockchair team!
 
-files (4210 files):
+dump files from blockchair (4210 files):
 
 from 20090103 to 20200718
 
