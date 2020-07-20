@@ -10,15 +10,17 @@ from 20090103 to 20200718
 checksum of dump files from blockchair is available.
 
 
-addresses total: ?
+addresses total: 1483853800
 
-unique addresses total: ?
+unique addresses total: 692773144
 
-unique addresses 1*:
+unique addresses 1*: ?
 
-unique addresses 3*:
+unique addresses 3*: ?
 
-unique addresses *-*:
+unique addresses bc*: ?
+
+unique addresses *-*: ?
 
 general methodology:
 
@@ -40,11 +42,11 @@ general methodology:
 
     nl concat.txt  > concatnl.txt
 
-4.sort and output unique addresses only from the previous concatenated file (requires large temp directory):
+4.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL to C (faster):
 
     TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 
-5.rearrange into the original order and cut only the address field.
+5.rearrange into the original order and cut only the address field (also set temp dir and LC_ALL):
 
     sort -n concatnl.uniq.txt | cut -f2 > final.txt
 
