@@ -50,9 +50,9 @@ general methodology:
 
     sort -n concatnl.uniq.txt | cut -f2 > final.txt
 
-6.split resulting file at about 90MB to upload to github:
+6.split resulting file at about 94MB to upload to github:
 
-    split -C 9000000 final.txt`
+    split -C 94000000 final.txt
 
 
 	Please consider giving me a nickle!  =)
