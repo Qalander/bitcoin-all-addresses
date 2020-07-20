@@ -1,15 +1,24 @@
 # bitcoin-all-addresses
-i will not spare the time. give up.
-
 lists of unique addresses from blockchair output dumps
 
 thank you, blockchair team!
 
 files (4210 files):
 
-blockchair_bitcoin_outputs_20090103.tsv.gz to blockchair_bitcoin_outputs_20200718.tsv.gz
+from 20090103 to 20200718
 
-total number of unique addresses: ?
+checksum of dump files from blockchair is available.
+
+
+addresses total: ?
+
+unique addresses total: ?
+
+unique addresses 1*:
+
+unique addresses 3*:
+
+unique addresses *-*:
 
 general methodology:
 
@@ -17,15 +26,33 @@ general methodology:
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
-1.2.also test .gz files `gunzip -t [*.gz]`;
+1.2.also test .gz files:
 
-2.uncompress files and cut the 7th field (recipient) `gunzip -c [FILE] | cut -d$'\t' -f7 > [FILE].addr.txt`;
+    gunzip -t [*.gz]
 
-3?.use perl and print addresses the first time they are seen `perl -ne 'print unless $seen{$_}++' $( printf '%s\n' *.addr.txt | sort -t_ -k4 -n )`;
+2.uncompress files and cut the 7th field (recipient):
 
-4?.split resulting file at about 90MB `split -C 9000000 [SINGLEFILE.txt]`;
+    for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
+
+3.concatenate resulting files;
+
+4.number lines:
+
+    nl concat.txt  > concatnl.txt
+
+4.sort and output unique addresses only from the previous concatenated file:
+
+   TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
+
+5.rearrange into the original order and cut only the address field.
+
+   sort -n concatnl.uniq.txt | cut -f2 > final.txt
+
+6.split resulting file at about 90MB `split -C 9000000 [SINGLEFILE.txt]` to upload to github.
 
 references:
+
+http???????????????????????????????
 
 https://blockchair.com/dumps/
 
