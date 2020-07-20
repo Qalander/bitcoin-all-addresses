@@ -40,7 +40,7 @@ general methodology:
 
     nl concat.txt  > concatnl.txt
 
-4.sort and output unique addresses only from the previous concatenated file:
+4.sort and output unique addresses only from the previous concatenated file (requires large temp directory):
 
    TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 
