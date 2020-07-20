@@ -34,7 +34,7 @@ general methodology:
 
     for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
 
-3.concatenate resulting files;
+3.concatenate resulting files in the original order;
 
 4.number lines:
 
@@ -42,13 +42,15 @@ general methodology:
 
 4.sort and output unique addresses only from the previous concatenated file (requires large temp directory):
 
-   TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
+    TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 
 5.rearrange into the original order and cut only the address field.
 
-   sort -n concatnl.uniq.txt | cut -f2 > final.txt
+    sort -n concatnl.uniq.txt | cut -f2 > final.txt
 
-6.split resulting file at about 90MB `split -C 9000000 [SINGLEFILE.txt]` to upload to github.
+6.split resulting file at about 90MB to upload to github:
+
+    split -C 9000000 final.txt`
 
 
 	Please consider giving me a nickle!  =)
