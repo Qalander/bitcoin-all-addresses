@@ -23,7 +23,7 @@ general methodology:
 
 4.split resulting file at about 180MB `split -C 180000000 [SINGLEFILE.txt]`;
 
-5.make 7z files and hope they are below 100MB each to upload to github.
+5?.make 7z files and hope they are below 100MB each to upload to github.
 
 references:
 
