@@ -5,12 +5,11 @@ lists of unique addresses from blockchair output dumps
 
 thank you, blockchair team!
 
-dump files from blockchair (4210 files):
-
-from 20090103 to 20200718
+dump files from blockchair (4210 files) from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
+address list is split in 262 files totalling approximately 24.58GB.
 
 addresses total: 1483853800
 
