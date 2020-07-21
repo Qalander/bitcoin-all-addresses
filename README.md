@@ -21,7 +21,7 @@ unique addresses 3*: ?
 
 unique addresses bc*: ?
 
-unique addresses *-*: ?
+unique addresses * -*: ?
 
 general methodology:
 
