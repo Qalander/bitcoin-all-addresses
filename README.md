@@ -11,6 +11,8 @@ checksum of dump files from blockchair is available.
 
 address list is split in 262 files totalling approximately 24.58GB.
 
+one feature of my lists is i tried to keep the order of addresses in which they first appear in blockchair dumps.
+
 addresses total: 1483853800
 
 unique addresses total: 692773144
