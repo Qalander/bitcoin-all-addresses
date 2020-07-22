@@ -1,5 +1,4 @@
 # bitcoin-all-addresses
-[wait for the uploading, it is going to be somewhat painful for me]
 
 lists of unique addresses from blockchair output dumps
 
@@ -9,7 +8,7 @@ dump files from blockchair (4210 files) from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
-address list is split in 262 files totalling approximately 24.58GB.
+address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB.
 
 one feature of my lists is i tried to keep the order of addresses in which they first appear in blockchair dumps.
 
@@ -17,13 +16,13 @@ addresses total: 1483853800
 
 unique addresses total: 692773144
 
-unique addresses 1*: ?
+unique addresses 1*: 470763465
 
-unique addresses 3*: ?
+unique addresses 3*: 167765027
 
-unique addresses bc*: ?
+unique addresses bc*: 39094520
 
-unique addresses * -*: ?
+unique addresses with -: 15150132
 
 general methodology:
 
