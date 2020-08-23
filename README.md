@@ -24,6 +24,8 @@ unique addresses bc*: 39094520
 
 unique addresses with -: 15150132
 
+---
+
 general methodology:
 
 1.download all output dump files from blockchair;
@@ -61,8 +63,23 @@ general methodology:
   
 		bc1qlxm5dfjl58whg6tvtszg5pfna9mn2cr2nulnjr
 
+---
 
-references:
+reference
+
+Original topic in Bitcointalk that led to this repo -- https://bitcointalk.org/index.php?topic=5259621.0
+
+---
+
+check loyceV address lists, which should be updated often (but they are not chronological):
+
+List of all Bitcoin addresses ever used -- https://bitcointalk.org/index.php?topic=5265993.0
+
+List of all Bitcoin addresses with a balance -- https://bitcointalk.org/index.php?topic=5254914.0
+
+---
+
+more references:
 
 https://blog.chainalysis.com/reports/bitcoin-addresses
 
@@ -74,4 +91,3 @@ http://addresses.loyce.club/?C=M;O=D
 
 http://loyceipv6.tk:20319/blockdata
 
-https://bitcointalk.org/index.php?topic=5259621.0
