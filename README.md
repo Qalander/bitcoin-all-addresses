@@ -32,6 +32,8 @@ general methodology:
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
+OBS: make sure files are processed in the correct date order in all steps required!
+
 1.2.also test .gz files:
 
     gunzip -t [*.gz]
@@ -48,7 +50,9 @@ general methodology:
 
 4.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL to C (faster):
 
-    TMPDIR="$PWD" LC_ALL=C sort -k2 -u -o concatnl.uniq.txt concatnl.txt
+    export TMPDIR="$PWD"
+    export LC_ALL=C
+    sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 
 5.rearrange into the original order and cut only the address field (also set temp dir and LC_ALL):
 
