@@ -10,7 +10,7 @@ checksum of dump files from blockchair is available.
 
 address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB (if you clone the repo, it is more than that).
 
-one feature of my lists is i kept the order of addresses in which they first appear in blockchair dumps.
+one feature of my lists is i kept the order of addresses in which they first appeared in blockchair dumps.
 
 addresses total: 1483853800
 
