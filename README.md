@@ -8,7 +8,7 @@ dump files from blockchair (4210 files) from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
-address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB (it is more than if you `git clone` the repo).
+address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB (if you `git clone` the repo, it is larger than that).
 
 one feature of my lists is i kept the order of addresses in which they first appeared in blockchair dumps.
 
