@@ -8,7 +8,7 @@ dump files from blockchair (4210 files) from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
-address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB (if you clone the repo, it is more than that).
+address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB (it is more than if you `git clone` the repo).
 
 one feature of my lists is i kept the order of addresses in which they first appeared in blockchair dumps.
 
@@ -28,7 +28,8 @@ unique addresses with -: 15150132
 
 general methodology:
 
-1.download all output dump files from blockchair;
+1.download all output dump files from blockchair, for example see script `blockchair.btcoutputs.sh` ;
+
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
@@ -38,7 +39,7 @@ OBS: make sure files are processed in the correct date order in all steps requir
 
     gunzip -t [*.gz]
 
-2.uncompress files and cut the 7th field (recipient):
+2.uncompress files and cut the 7th field (recipient); also see script `blockchair.btcoutputs.addrgrep.sh` :
 
     for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
 
@@ -54,7 +55,7 @@ OBS: make sure files are processed in the correct date order in all steps requir
     export LC_ALL=C
     sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 
-5.rearrange into the original order and cut only the address field (also set temp dir and LC_ALL):
+5.rearrange into the original order and cut only the address field (also export $TMPDIR and $LC_ALL):
 
     sort -n concatnl.uniq.txt | cut -f2 > final.txt
 
@@ -62,6 +63,7 @@ OBS: make sure files are processed in the correct date order in all steps requir
 
     split -C 94000000 final.txt
 
+---
 
 	Please consider giving me a nickle!  =)
   
@@ -69,21 +71,9 @@ OBS: make sure files are processed in the correct date order in all steps requir
 
 ---
 
-reference
+references
 
 Original topic in Bitcointalk that led to this repo -- https://bitcointalk.org/index.php?topic=5259621.0
-
----
-
-check loyceV address lists, which should be updated often (but they are not chronological):
-
-List of all Bitcoin addresses ever used -- https://bitcointalk.org/index.php?topic=5265993.0
-
-List of all Bitcoin addresses with a balance -- https://bitcointalk.org/index.php?topic=5254914.0
-
----
-
-more references:
 
 https://blog.chainalysis.com/reports/bitcoin-addresses
 
@@ -95,3 +85,10 @@ http://addresses.loyce.club/?C=M;O=D
 
 http://loyceipv6.tk:20319/blockdata
 
+see also
+
+loyceV address lists, which should be updated often (but his lists are not chronological):
+
+List of all Bitcoin addresses ever used -- https://bitcointalk.org/index.php?topic=5265993.0
+
+List of all Bitcoin addresses with a balance -- https://bitcointalk.org/index.php?topic=5254914.0
