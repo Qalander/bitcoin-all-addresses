@@ -4,7 +4,8 @@
 
 #user set
 INDIR="/media/primary/blockchair.outputs.dumps"
-OUTDIR="/media/primary/blockchair.outputs.dumps/addr"
+OUTDIR="$PWD"
+#OUTDIR="/media/primary/blockchair.outputs.dumps/addr"
 
 #zsh shell option
 #setopt extendedglob
@@ -23,7 +24,7 @@ do
 	(( ++n ))
 	
 	#destination file name
-	dest="${f##*/}.addr.txt"
+	dest="$OUTDIR/${f##*/}.addr.txt"
 	
 	#feedback to stderr
 	printf ">>>%s/%s: %s  \r" "$n" "${#FILES[@]}" "${f##*/}" >&2
