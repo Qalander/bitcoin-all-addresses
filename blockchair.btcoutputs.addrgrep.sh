@@ -17,7 +17,7 @@ do
 	FILES+=( "$REPLY" )
 done <<<"$( printf '%s\n' "$INDIR"/*.tsv.gz | sort -t_ -k4 -n )"
 
-#process each file asynchronously
+#process each file
 for f in "${FILES[@]}"
 do
 	#counter
@@ -46,6 +46,6 @@ do
 	fi
 done
 
-wait
+#wait
 echo >&2
 
