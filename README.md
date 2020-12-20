@@ -28,7 +28,7 @@ unique addresses with -: 15150132
 
 general methodology:
 
-1.download all output dump files from blockchair, for example see script `blockchair.btcoutputs.sh` ;
+1.download all output dump files from blockchair, example see example script `blockchair.btcoutputs.sh` ;
 
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
@@ -39,7 +39,7 @@ OBS: make sure files are processed in the correct date order in all steps requir
 
     gunzip -t [*.gz]
 
-2.uncompress files and cut the 7th field (recipient); also see script `blockchair.btcoutputs.addrgrep.sh` :
+2.uncompress files and cut the 7th field (recipient); see also script `blockchair.btcoutputs.addrgrep.sh` :
 
     for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
 
