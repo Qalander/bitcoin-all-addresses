@@ -28,7 +28,7 @@ unique addresses with -: 15150132
 
 general methodology:
 
-1.download all output dump files from blockchair, example see example script `blockchair.btcoutputs.sh` ;
+1.download all output dump files from blockchair, see example script `blockchair.btcoutputs.sh` ;
 
 
 1.1.check the smallest file sizes to be sure those files downloaded correctly;
