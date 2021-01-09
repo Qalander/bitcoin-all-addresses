@@ -52,16 +52,16 @@ for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
 nl concat.txt  > concatnl.txt
 ```
 
-### 5.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL to C (faster):
+### 5.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL and LANG to C (faster):
 
 ```bash
 export TMPDIR="$PWD"
-export LC_ALL=C
+export LC_ALL=C LANG=C
 
 sort -k2 -u -o concatnl.uniq.txt concatnl.txt
 ```
 
-### 6.rearrange into the original order and cut only the address field (also export $TMPDIR and $LC_ALL):
+### 6.rearrange into the original order and cut only the address field:
 
 ```bash
 sort -n concatnl.uniq.txt | cut -f2 > final.txt
