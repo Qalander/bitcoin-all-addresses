@@ -4,7 +4,7 @@ lists of unique addresses from blockchair output dumps
 
 _thank you, blockchair team!_
 
-[dump files from blockchair](https://blockchair.com/dumps/): 4210 files, from 20090103 to 20200718
+[dump files from blockchair](https://gz.blockchair.com/bitcoin/outputs/): 4210 files, from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
