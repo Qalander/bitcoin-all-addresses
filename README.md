@@ -13,7 +13,7 @@ address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB 
 one feature of my lists is i kept the order of addresses in which they first appeared in blockchair dumps.
 
 type            | matches
----------------:|---------------:
+:---------------|---------------:
 __addresses total__| 1483853800
 __unique addresses total__| 692773144
 __unique addresses 1*__| 470763465
