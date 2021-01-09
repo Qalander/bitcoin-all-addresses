@@ -2,9 +2,9 @@
 
 lists of unique addresses from blockchair output dumps
 
-thank you, blockchair team!
+_thank you, blockchair team!_
 
-dump files from blockchair (4210 files) from 20090103 to 20200718
+[dump files from blockchair](https://blockchair.com/dumps/): 4210 files, from 20090103 to 20200718
 
 checksum of dump files from blockchair is available.
 
@@ -12,56 +12,66 @@ address list is split in 262 files (xaa to xkb) totalling approximately 24.58GB 
 
 one feature of my lists is i kept the order of addresses in which they first appeared in blockchair dumps.
 
-addresses total: 1483853800
-
-unique addresses total: 692773144
-
-unique addresses 1*: 470763465
-
-unique addresses 3*: 167765027
-
-unique addresses bc*: 39094520
-
-unique addresses with -: 15150132 
+type            | matches
+---------------:|---------------
+__addresses total__| 1483853800
+__unique addresses total__| 692773144
+__unique addresses 1*__| 470763465
+__unique addresses 3*__ |167765027
+__unique addresses bc*__| 39094520
+__unique addresses with -__| 15150132 
 
 ---
 
-general methodology:
+## general methodology:
 
-1.download all output dump files from blockchair, see example script `blockchair.btcoutputs.sh` ;
+### 1.download all output dump files from blockchair, see example script `blockchair.btcoutputs.sh` ;
 
 
-1.1.check the smallest file sizes to be sure those files downloaded correctly;
+#### 1.1.check the smallest file sizes to be sure those files downloaded correctly;
 
 OBS: make sure files are processed in the correct date order in all steps required!
 
-1.2.also test .gz files:
+#### 1.2.also test .gz files:
 
-    gunzip -t [*.gz]
+```bash
+gunzip -t [*.gz]
+```
 
-2.uncompress files and cut the 7th field (recipient); see also script `blockchair.btcoutputs.addrgrep.sh` :
+### 2.uncompress files and cut the 7th field (recipient); see also script `blockchair.btcoutputs.addrgrep.sh` :
 
-    for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
+```bash
+for f in *.tsv.gz ;do gunzip -c "$f" | cut -d$'\t' -f7 > "${f}.addr.txt" ;done
+```
 
-3.concatenate resulting files in the original order;
+### 3.concatenate resulting files in the original order;
 
-4.number lines:
+### 4.number lines:
 
-    nl concat.txt  > concatnl.txt
+```bash
+nl concat.txt  > concatnl.txt
+```
 
-4.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL to C (faster):
+### 5.sort and output unique addresses only from the previous concatenated file; set large temporary diretory for buffers and LC_ALL to C (faster):
 
-    export TMPDIR="$PWD"
-    export LC_ALL=C
-    sort -k2 -u -o concatnl.uniq.txt concatnl.txt
+```bash
+export TMPDIR="$PWD"
+export LC_ALL=C
 
-5.rearrange into the original order and cut only the address field (also export $TMPDIR and $LC_ALL):
+sort -k2 -u -o concatnl.uniq.txt concatnl.txt
+```
 
-    sort -n concatnl.uniq.txt | cut -f2 > final.txt
+### 6.rearrange into the original order and cut only the address field (also export $TMPDIR and $LC_ALL):
 
-6.split resulting file at about 94MB to upload to github:
+```bash
+sort -n concatnl.uniq.txt | cut -f2 > final.txt
+```
 
-    split -C 94000000 final.txt
+### 7.split resulting file at about 94MB to upload to github:
+
+```bash
+split -C 94000000 final.txt
+```
 
 ---
 
@@ -71,7 +81,7 @@ OBS: make sure files are processed in the correct date order in all steps requir
 
 ---
 
-references
+## references
 
 Original topic in Bitcointalk that led to this repo -- https://bitcointalk.org/index.php?topic=5259621.0
 
@@ -85,7 +95,7 @@ http://addresses.loyce.club/?C=M;O=D
 
 http://loyceipv6.tk:20319/blockdata
 
-see also
+## see also
 
 loyceV address lists, which should be updated often (but his lists are not chronological):
 
