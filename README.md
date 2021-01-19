@@ -21,7 +21,7 @@ Stats (until 2020-07-18)
 
 TYPE            | MATCHES
 :---------------|---------------:
-       __addresses total__| 1483853800
+__addresses total__ |       1483853800
 __unique addresses total__|  692773144
 __unique addresses 1*__|     470763465
 __unique addresses 3*__ |    167765027
@@ -32,7 +32,7 @@ Stats (until 2021-01-17)
 
 TYPE            | MATCHES
 :---------------|---------------:
-       __addresses total__| 1652542603
+__addresses total__|        1652542603
 __unique addresses total__|  784345877
 __unique addresses 1*__|     510031682
 __unique addresses 3*__ |    208054134
@@ -50,8 +50,9 @@ and usually encode data.
 ## General methodology:
 
 ### 1. Download all output dump files from blockchair,
-see script
-[blockchair.btcoutputs.sh](https://github.com/mountaineerbr/bitcoin-all-addresses/blob/master/blockchair.btcoutputs.sh) ;
+
+See script
+[blockchair.btcoutputs.sh](https://github.com/mountaineerbr/bitcoin-all-addresses/blob/master/blockchair.btcoutputs.sh);
 
 #### 1.1. Check the smallest file sizes to be sure those files downloaded correctly;
 
