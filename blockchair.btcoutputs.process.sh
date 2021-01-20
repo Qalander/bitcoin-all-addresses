@@ -10,6 +10,9 @@
 #cut address field from blockchair *.tsv.gz files
 cutaddrf()
 {
+	local GZDIR ALLDIR FILES REPLY f n dest 
+	typeset -a FILES
+	
 	#user set
 	GZDIR="/media/primary/blockchair.outputs.dumps"
 	ALLDIR="/media/primary/blockchair.outputs.dumps/step3"
@@ -17,7 +20,6 @@ cutaddrf()
 	#sort blockchair dump files *.tsv.gz
 	#by date and make a filename array
 	#(eg blockchair_bitcoin_outputs_20090103.tsv.gz)
-	unset FILES
 	while read
 	do
 		FILES+=( "$REPLY" )
@@ -43,14 +45,14 @@ cutaddrf()
 			rm -v "$dest" >&2
 		fi
 	done
-	
-	#make sure environment is left clean
-	unset GZDIR ALLDIR FILES REPLY f n dest 
 }
 
 #make a list of unique address from *.addr.txt files
 uniqaddrf()
 {
+	local FILES ALLDIR OUTDIR TMPDIR REPLY
+	typeset -a FILES
+	
 	#user set
 	ALLDIR="/media/primary/blockchair.outputs.dumps/step3"
 	OUTDIR="/media/primary/blockchair.outputs.dumps/test5"
@@ -64,7 +66,6 @@ uniqaddrf()
 	#sort *.addr.txt files
 	#by date and make a filename array
 	#(eg blockchair_bitcoin_outputs_20090103.tsv.gz.addr.txt)
-	unset FILES
 	while read
 	do
 		FILES+=( "$REPLY" )
@@ -76,9 +77,6 @@ uniqaddrf()
 		sort -k2 -u | 	#sort by the second field (address) and output only unique entries
 		sort -n | 	#sort by the first field (line number)
 		cut -f2 > "$OUTDIR/final.txt"  #cut the second field only (address)
-	
-	#make sure environment is left clean
-	unset ALLDIR OUTDIR FILES TMPDIR REPLY
 }
 #the first sort took ~3h20min to complete on my intel i7 and usb hdd
 #the second sort took ~2h to complete
@@ -86,6 +84,8 @@ uniqaddrf()
 #get some address stats
 countaddrf()
 {
+	local LIST ALLDIR all uni a1 a3 bc nn
+
 	LIST="/media/primary/blockchair.outputs.dumps/test5/final.txt"
 	ALLDIR="/media/primary/blockchair.outputs.dumps/step3"
 
@@ -105,8 +105,6 @@ countaddrf()
 
 	#check
 	print "check: $((a1+a3+bc+nn)) must be equal to $uni"
-
-	unset LIST ALLDIR all uni a1 a3 bc nn
 }
 #OBS: text cut from `blockchair_bitcoin_outputs_20201205.tsv.gz` seems
 #to contain a last empty line.
