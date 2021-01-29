@@ -59,7 +59,7 @@ uniqaddrf()
 	#set a large temp dir for `sort`
 	TMPDIR="/media/primary/tmp"
 
-	#make gnu tools work faster, for our case, this should be OK
+	#make gnu tools work faster, for our case this should be OK
 	export TMPDIR
 	export LC_ALL=C LANG=C
 
@@ -90,7 +90,8 @@ countaddrf()
 	ALLDIR="/media/primary/blockchair.outputs.dumps/step3"
 
 	#counts
-	all="$( for f in "$ALLDIR"/*.addr.txt ;do wc=$(( wc + $(wc -l <"$f") - 1 )) ;done ;print $wc )"
+	#OBS: some files contain a first-line `header', do not count it
+	all="$( for f in "$ALLDIR"/*.addr.txt ;do (( lnum = lnum + $(wc -l <"$f") - 1 )) ;done ;print $lnum )"
 	print all: $all
 	uni="$(( $(wc -l <"$LIST") - 1 ))"
 	print unique: $uni
@@ -105,10 +106,10 @@ countaddrf()
 
 	#check
 	print "check: $((a1+a3+bc+nn)) must be equal to $uni"
+	#OBS: text cut from `blockchair_bitcoin_outputs_20201205.tsv.gz` seems
+	#to contain a last empty line.
 }
-#OBS: text cut from `blockchair_bitcoin_outputs_20201205.tsv.gz` seems
-#to contain a last empty line.
-#these take about 27min to run
+#these took about 27min to run
 
 #split list to upload to github
 #{ split -C 94000000 final.txt ;}
